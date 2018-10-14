@@ -10,6 +10,14 @@ AdminUser.create!(
   password: 'password',
   password_confirmation: 'password'
 ) if Rails.env.development?
+
+Language.create(
+  name: 'English',
+  localised_name: 'English',
+  iso2: 'en',
+  iso3: 'eng'
+)
+
 User.create!(
   email: 'user@example.com',
   password: 'password',

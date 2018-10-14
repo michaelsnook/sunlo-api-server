@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  localised_name: MyText
+  iso2: MyText
+  iso3: MyText
+
+two:
+  name: MyText
+  localised_name: MyText
+  iso2: MyText
+  iso3: MyText
