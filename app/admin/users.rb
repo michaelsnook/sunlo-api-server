@@ -15,8 +15,8 @@ ActiveAdmin.register User do
   form do |f|
     f.inputs 'Edit User' do
       f.input :email
-      f.input :languages, as: :select, input_html: { multiple: true }
-      f.input :created_at, input_html: { disabled: true }
+      f.input :languages, as: :select, multiple: true
+      f.input :created_at, disabled: true
     end
     f.actions
   end
