@@ -13,11 +13,15 @@ ActiveAdmin.register User do
 # end
 
   form do |f|
-    f.inputs 'Edit User' do
+    f.inputs 'User Details' do
       f.input :email
-      f.input :password
+      if controller.action_name == 'new'
+        f.input :password
+      end
       f.input :languages, as: :select, multiple: true
-      f.input :created_at, disabled: true
+      if controller.action_name == 'edit'
+        f.input :created_at, disabled: true
+      end
     end
     f.actions
   end
