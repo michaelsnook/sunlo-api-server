@@ -2,7 +2,7 @@ ActiveAdmin.register User do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-  permit_params :email, language_ids: [:id]
+  permit_params :email, :password, language_ids: [:id]
 #
 # or
 #
@@ -15,6 +15,7 @@ ActiveAdmin.register User do
   form do |f|
     f.inputs 'Edit User' do
       f.input :email
+      f.input :password
       f.input :languages, as: :select, multiple: true
       f.input :created_at, disabled: true
     end
