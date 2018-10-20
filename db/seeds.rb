@@ -49,3 +49,9 @@ Deck.create(
   user_id: 2,
   language_id: 1
 ) if Rails.env.development?
+
+Phrase.create(
+  text: 'Barish ho rahi hai',
+  localised_text: 'बारिश हो रही है',
+  language_id: 2
+)
