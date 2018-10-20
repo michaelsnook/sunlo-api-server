@@ -55,3 +55,21 @@ Phrase.create(
   localised_text: 'बारिश हो रही है',
   language_id: 2
 )
+
+Card.create(
+  deck_id: 1,
+  phrase_id: 1,
+  status: 'learning'
+) if Rails.env.development?
+
+Phrase.create(
+  text: 'Khatam ho gaya',
+  localised_text: 'खतम हो गया',
+  language_id: 2
+)
+
+Card.create(
+  deck_id: 1,
+  phrase_id: 2,
+  status: 'learning'
+) if Rails.env.development?

@@ -9,7 +9,7 @@ class DecksController < InheritedResources::Base
   def show
     @deck = Deck.where(user_id: current_user.id).find(params[:id])
   rescue ActiveRecord::RecordNotFound
-    flash[:notice] = "No such card"
+    flash[:notice] = "No such deck"
     redirect_to :action => 'index'
   end
 

@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   root "home#index"
 
-  resources :languages, :decks, :phrases
-
+  resources :languages, :decks, :phrases, :cards
 
   devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config

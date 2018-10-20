@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_20_084147) do
+ActiveRecord::Schema.define(version: 2018_10_20_151033) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,17 @@ ActiveRecord::Schema.define(version: 2018_10_20_084147) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "cards", force: :cascade do |t|
+    t.bigint "phrase_id"
+    t.bigint "deck_id"
+    t.string "status", default: "learning"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["deck_id"], name: "index_cards_on_deck_id"
+    t.index ["phrase_id", "deck_id"], name: "index_cards_on_phrase_id_and_deck_id", unique: true
+    t.index ["phrase_id"], name: "index_cards_on_phrase_id"
   end
 
   create_table "decks", force: :cascade do |t|
@@ -88,5 +99,7 @@ ActiveRecord::Schema.define(version: 2018_10_20_084147) do
     t.index ["user_id"], name: "index_users_languages_on_user_id"
   end
 
+  add_foreign_key "cards", "decks"
+  add_foreign_key "cards", "phrases"
   add_foreign_key "phrases", "languages"
 end

@@ -17,3 +17,4 @@ I'm keeping a list here so I can hopefully commit notes on ongoing issues as I c
 
 1. Adding users_languages via the Admin doesn't work. The relation seems to work just fine (e.g. this works `User.first.update(language_ids: [1, 2])`) but in the admin if you try to change the languages, it clears them out for that user altogether.
 2. There's no uniqueness constraint on users_languages the way there is with decks. (`["user_id", "language_id"]`)
+3. In `cards_controller.rb` I'm currently using `@cards = Card.where(deck_id: current_user.decks.pluck(:id))` but I feel like I should be able to use something simpler like `current_user.decks.cards` or even use a `has_many through` model to just write `current_user.cards`.
