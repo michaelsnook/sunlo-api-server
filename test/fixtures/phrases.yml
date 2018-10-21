@@ -3,11 +3,9 @@
 one:
   text: MyText
   localised_text: MyText
-  language: one
-  phrase: one
+  language: 1
 
 two:
   text: MyText
   localised_text: MyText
-  language: two
-  phrase: two
+  language: 2

@@ -3,11 +3,11 @@
 one:
   name: MyText
   localised_name: MyText
-  iso2: MyText
-  iso3: MyText
+  iso2: we
+  iso3: wed
 
 two:
   name: MyText
   localised_name: MyText
-  iso2: MyText
-  iso3: MyText
+  iso2: th
+  iso3: thu
