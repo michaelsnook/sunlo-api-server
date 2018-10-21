@@ -8,6 +8,7 @@ class CreateCards < ActiveRecord::Migration[5.2]
     end
     add_index :cards, [:phrase_id, :deck_id], unique: true
   end
+
   def down
     drop_table :cards
   end

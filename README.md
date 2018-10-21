@@ -17,4 +17,3 @@ I'm keeping a list here so I can hopefully commit notes on ongoing issues as I c
 
 
 1. There's no uniqueness constraint on users_languages the way there is with decks. (`["user_id", "language_id"]`)
-1. In `cards_controller.rb` I'm currently using `@cards = Card.where(deck_id: current_user.decks.pluck(:id))` but I feel like I should be able to use something simpler like `current_user.decks.cards` or even use a `has_many through` model to just write `current_user.cards`.

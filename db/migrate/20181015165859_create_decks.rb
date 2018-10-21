@@ -5,9 +5,7 @@ class CreateDecks < ActiveRecord::Migration[5.2]
       t.belongs_to :language, index: true
       t.timestamps
     end
-
     add_index :decks, [:user_id, :language_id], unique: true
-
   end
 
   def down
