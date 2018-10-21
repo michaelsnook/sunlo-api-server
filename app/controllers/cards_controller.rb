@@ -3,14 +3,14 @@ class CardsController < InheritedResources::Base
   respond_to :html, :json
 
   def show
-    @card = Card.where(deck_id: current_user.decks.pluck(:id)).find(params[:id])
+    @card = current_user.cards.find(params[:id])
   rescue ActiveRecord::RecordNotFound
     flash[:notice] = "No such card"
     redirect_to :action => 'index'
   end
 
   def index
-    @cards = Card.where(deck_id: current_user.decks.pluck(:id))
+    @cards = current_user.cards
   end
 
   private
