@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_20_151033) do
+ActiveRecord::Schema.define(version: 2018_10_21_081530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,6 +80,17 @@ ActiveRecord::Schema.define(version: 2018_10_20_151033) do
     t.index ["language_id"], name: "index_phrases_on_language_id"
   end
 
+  create_table "translations", force: :cascade do |t|
+    t.text "text"
+    t.text "localised_text"
+    t.bigint "phrase_id"
+    t.bigint "language_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_translations_on_language_id"
+    t.index ["phrase_id"], name: "index_translations_on_phrase_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -102,4 +113,6 @@ ActiveRecord::Schema.define(version: 2018_10_20_151033) do
   add_foreign_key "cards", "decks"
   add_foreign_key "cards", "phrases"
   add_foreign_key "phrases", "languages"
+  add_foreign_key "translations", "languages"
+  add_foreign_key "translations", "phrases"
 end

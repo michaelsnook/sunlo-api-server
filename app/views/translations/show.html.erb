@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @translation.text %>
+</p>
+
+<p>
+  <strong>Localised text:</strong>
+  <%= @translation.localised_text %>
+</p>
+
+<p>
+  <strong>Phrase:</strong>
+  <%= @translation.phrase %>
+</p>
+
+<p>
+  <strong>Language:</strong>
+  <%= @translation.language %>
+</p>
+
+<%= link_to 'Edit', edit_translation_path(@translation) %> |
+<%= link_to 'Back', translations_path %>

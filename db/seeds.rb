@@ -73,3 +73,15 @@ Card.create(
   phrase_id: 2,
   status: 'learning'
 ) if Rails.env.development?
+
+Translation.create(
+  phrase_id: 1,
+  language_id: 1,
+  text: 'It is raining'
+)
+
+Translation.create(
+  phrase_id: 2,
+  language_id: 1,
+  text: 'All over/empty'
+)

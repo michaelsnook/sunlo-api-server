@@ -3,6 +3,7 @@ class Phrase < ApplicationRecord
   validates :text, presence: true
   validates :language, presence: true
   has_many :cards
+  has_many :translations
 
   def to_s
     text
